@@ -18,14 +18,15 @@ $(function() {
         $(element).children('button').addClass('button');
     });
 
-    var $buttons = $('button');
+    var $buttons = $('button'),
+        $body = $('body');
 
-    $buttons.click(function() {
+    $buttons.on('click', function() {
         
         //set body background-color corelated whit value of attribute 'data-tmp' 
         var $dataTmpValue = $(this).attr('data-tmp'),
         color = '' + ($dataTmpValue * 25) + ',' + ($dataTmpValue * 25) + ',' + ($dataTmpValue * 25);
-        $('body').css('background-color', 'rgb(' + color + ')');
+        $body.css('background-color', 'rgb(' + color + ')');
         
 
         alert('This is button whit data-tmp='+$(this).attr('data-tmp'));
